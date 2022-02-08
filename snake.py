@@ -25,7 +25,7 @@ class Snake:
 
     def add_body(self, position):
         segment = Turtle(shape="square")
-        segment.color("green")
+        segment.color("white")
         segment.penup()
         segment.goto(position)
         self.body.append(segment)
