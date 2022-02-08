@@ -3,10 +3,11 @@ class Display(Turtle):
     def __init__(self):
         super().__init__()
         self.screen = Screen()
-        self.screen.setup(width=1000, height=1000)
+        self.screen.setup(width=900, height=900)
         self.screen.bgcolor("Black")
         self.screen.title("Slither Sam")
         self.screen.tracer(0)
+        self.screen._root.resizable(False, False)
         self.border()
     
     def exit(self):
