@@ -24,10 +24,9 @@ while is_snake_alive:
         is_snake_alive = False
         score.game_over()
 
-    for segments in sam.body:
-        if segments == sam.head:
-            pass
-        elif sam.head.distance(segments) < 10:
+    for segments in sam.body[1:]:
+        if sam.head.distance(segments) < 10:
             is_snake_alive = False
             score.game_over()
+            
 display.exit()
