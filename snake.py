@@ -19,11 +19,18 @@ class Snake:
 #creates snake
     def create_snake(self):
         for position in STARTING_POSITION:
-            segment = Turtle(shape="square")
-            segment.color("white")
-            segment.penup()
-            segment.goto(position)
-            self.body.append(segment)
+            self.add_body(position)
+            
+
+    def add_body(self, position):
+        segment = Turtle(shape="square")
+        segment.color("white")
+        segment.penup()
+        segment.goto(position)
+        self.body.append(segment)
+
+    def extend(self):
+        self.add_body(self.body[-1].position())
 
 #moves snake 
     def move(self):
@@ -54,9 +61,10 @@ class Snake:
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
     
-    
+    #listen to keystrokes
     def turn(self):
-        self.screen.onkey(self.left, "a")
-        self.screen.onkey(self.right, "d")
-        self.screen.onkey(self.up, "w")
-        self.screen.onkey(self.down, "s")
+        time.sleep(0.01)
+        self.screen.onkeypress(self.left, "a")
+        self.screen.onkeypress(self.right, "d")
+        self.screen.onkeypress(self.up, "w")
+        self.screen.onkeypress(self.down, "s")

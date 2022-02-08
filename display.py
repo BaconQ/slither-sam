@@ -1,9 +1,16 @@
 from turtle import Screen
-class Display:
+class Display():
     def __init__(self):
-        screen = Screen()
-        screen.setup(width=800, height=800)
-        screen.bgcolor("Black")
-        screen.title("Slither Sam")
-        screen.tracer(0)
-        screen.listen()
+        self.screen = Screen()
+        self.screen.setup(width=800, height=800)
+        self.screen.bgcolor("Black")
+        self.screen.title("Slither Sam")
+        self.screen.tracer(0)
+    
+    def exit(self):
+       self.screen.exitonclick()
+
+    def listen(self):
+        self.screen.listen()
+       
+
