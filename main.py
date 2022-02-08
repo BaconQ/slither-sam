@@ -2,6 +2,7 @@ from snake import Snake
 from display import Display
 from food import Food
 from score import Score
+import time
 
 display = Display()
 sam = Snake()
@@ -13,6 +14,7 @@ display.listen()
 
 is_snake_alive = True
 while is_snake_alive:
+    
     sam.move()
     
     if sam.head.distance(food) < 15:
@@ -28,5 +30,5 @@ while is_snake_alive:
         if sam.head.distance(segments) < 10:
             is_snake_alive = False
             score.game_over()
-            
+
 display.exit()

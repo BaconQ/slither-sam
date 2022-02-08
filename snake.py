@@ -6,6 +6,7 @@ UP = 90
 DOWN = 270
 RIGHT = 0
 LEFT = 180
+SPEED = 20
 
 class Snake:
  
@@ -40,25 +41,26 @@ class Snake:
             new_x = self.body[i-1].xcor()
             new_y = self.body[i-1].ycor()
             self.body[i].goto(new_x, new_y)
-        self.head.fd(self.speed)
+        self.head.fd(SPEED)
+        self.last_input = self.head.heading()
                 
 #turns snake
     def up(self):
-        if self.head.heading() != DOWN:
+        if self.last_input != DOWN:
             self.head.setheading(UP)
 
 
     def down(self):
-        if self.head.heading() != UP:
+        if self.last_input != UP:
             self.head.setheading(DOWN)
 
 
     def right(self):
-        if self.head.heading() != LEFT:
+        if self.last_input != LEFT:
             self.head.setheading(RIGHT)
 
     def left(self):
-        if self.head.heading() != RIGHT:
+        if self.last_input != RIGHT:
             self.head.setheading(LEFT)
     
     #listen to keystrokes
