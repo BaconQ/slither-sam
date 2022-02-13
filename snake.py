@@ -70,3 +70,11 @@ class Snake:
         self.screen.onkeypress(self.right, "d")
         self.screen.onkeypress(self.up, "w")
         self.screen.onkeypress(self.down, "s")
+
+    def reset(self):
+        for i in self.body:
+            i.reset()
+        self.body.clear()
+        self.create_snake()
+        self.head = self.body[0]
+        

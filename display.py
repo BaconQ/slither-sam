@@ -1,4 +1,9 @@
 from turtle import Turtle, Screen
+
+ALIGNMENT = "center"
+FONT =  ("courier", 24, "bold")
+
+
 class Display(Turtle):
     def __init__(self):
         super().__init__()
@@ -7,7 +12,7 @@ class Display(Turtle):
         self.screen.bgcolor("Black")
         self.screen.title("Slither Sam")
         self.screen.tracer(0)
-        self.screen._root.resizable(False, False)
+        #self.screen._root.resizable(False, False)
         self.border()
     
     def exit(self):
@@ -26,6 +31,6 @@ class Display(Turtle):
         for _ in range(4):
             self.fd(740)
             self.left(90)
-    
-       
+
+   
 
